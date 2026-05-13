@@ -1,6 +1,3 @@
-Here is the `README.md` file for a Flutter basketball app, containing only text documentation and no code.
-
-```markdown
 # 🏀 Task 2 : Basketball App (Flutter)
 
 A simple, minimalist basketball scorekeeping app built with **Flutter**.  
@@ -90,5 +87,3 @@ basketball_app/
 - RESET clears both scores but keeps the app running
 
 ---
-
-```
