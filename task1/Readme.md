@@ -29,30 +29,15 @@ Create a functional calculator in Flutter with the following specifications:
 | Spacer             | Flexible space between buttons and result container    |
 | Result Container   | Centered container showing `0.0` initially             |
 
-## 📸 UI Layout
+---
 
-```
-+-----------------------------------+
-|                                   |
-|  [ TextField: First number  ]     |
-|  [ TextField: Second number ]     |
-|                                   |
-|  [ + ]  [ - ]  [ × ]  [ ÷ ]       |
-|                                   |
-|  [ = Calculate ]                  |
-|                                   |
-|  [ t  Clear ]                     |
-|                                   |
-|  <Spacer>                         |
-|                                   |
-|  +-----------------------------+  |
-|  |           0.0               |  |
-|  +-----------------------------+  |
-|                                   |
-+-----------------------------------+
-```
+## 📸 App Preview
 
-t = 🗑️
+<div align="center">
+  <img src="https://i.postimg.cc/Wz83btW8/task.jpg" width="300" height="400" alt="Basketball App Icon">
+</div>
+
+---
 
 ## 🧠 Logic Requirements
 
