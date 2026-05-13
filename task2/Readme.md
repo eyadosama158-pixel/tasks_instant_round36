@@ -37,7 +37,9 @@ Below both columns, there is a single **RESET** button.
 
 ## 📸 App Preview
 
-![Basketball App Screenshot](screenshot.webp)
+<div align="center">
+  <img src="https://play-lh.googleusercontent.com/gU23UvDKHxrpsP_rMVOR8aluebwIu2wH6nAKanr6aRcfcgoyKE8xw7xO7PN0QiJz18g=w2560-h1440-rw" width="250" height="400" alt="Basketball App Icon">
+</div>
 
 ---
 
@@ -69,6 +71,7 @@ No history tracking. No undo stack. Simple addition only.
 ---
 
 ## 📁 Expected Project Structure
+
 ```
 
 basketball_app/
@@ -78,7 +81,6 @@ basketball_app/
 └── README.md # this file
 
 ```
-
 
 ## 📝 Notes
 
