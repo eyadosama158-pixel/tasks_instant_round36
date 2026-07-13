@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     // Navigate to Home Screen (or onboarding screen 2 once implemented) after 3 seconds
-    Timer(const Duration(seconds: 3), () {
+    Timer(Duration(seconds: 3), () {
       if (mounted) {
         Navigator.pushReplacementNamed(context, '/home');
       }
@@ -55,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen>
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -69,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen>
           children: [
             // Center Logo
             Align(
-              alignment: const Alignment(0, -0.15),
+              alignment: Alignment(0, -0.15),
               child: FadeTransition(
                 opacity: _fadeAnimation,
                 child: ScaleTransition(

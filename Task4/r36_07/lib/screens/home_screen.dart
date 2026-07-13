@@ -3,7 +3,7 @@ import '../data/data.dart';
 import 'product_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -15,10 +15,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 80),
+          padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 80),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         "Foodgo",
                         style: TextStyle(
                           fontSize: 40,
@@ -47,14 +47,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 25,
                     backgroundColor: Colors.white,
                     child: Icon(Icons.person, color: Colors.grey, size: 30),
                   ),
                 ],
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
 
               // Search Bar
               Row(
@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Expanded(
                     child: Container(
                       height: 55,
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15),
@@ -70,14 +70,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           BoxShadow(
                             color: Colors.black.withOpacity(0.05),
                             blurRadius: 10,
-                            offset: const Offset(0, 5),
+                            offset: Offset(0, 5),
                           ),
                         ],
                       ),
                       child: Row(
                         children: [
-                          const Icon(Icons.search, color: Colors.black54, size: 28),
-                          const SizedBox(width: 12),
+                          Icon(Icons.search, color: Colors.black54, size: 28),
+                          SizedBox(width: 12),
                           Text(
                             "Search",
                             style: TextStyle(color: Colors.grey[500], fontSize: 16),
@@ -86,26 +86,26 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 15),
+                  SizedBox(width: 15),
                   Container(
                     height: 55,
                     width: 55,
                     decoration: BoxDecoration(
-                      color: const Color(0xFFE81B30),
+                      color: Color(0xFFE81B30),
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFFE81B30).withOpacity(0.3),
+                          color: Color(0xFFE81B30).withOpacity(0.3),
                           blurRadius: 10,
-                          offset: const Offset(0, 5),
+                          offset: Offset(0, 5),
                         ),
                       ],
                     ),
-                    child: const Icon(Icons.tune, color: Colors.white),
+                    child: Icon(Icons.tune, color: Colors.white),
                   ),
                 ],
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
 
               // Categories Row
               SizedBox(
@@ -122,17 +122,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                       },
                       child: Container(
-                        margin: const EdgeInsets.only(right: 15),
-                        padding: const EdgeInsets.symmetric(horizontal: 25),
+                        margin: EdgeInsets.only(right: 15),
+                        padding: EdgeInsets.symmetric(horizontal: 25),
                         decoration: BoxDecoration(
-                          color: isSelected ? const Color(0xFFE81B30) : Colors.white,
+                          color: isSelected ? Color(0xFFE81B30) : Colors.white,
                           borderRadius: BorderRadius.circular(25),
                           boxShadow: isSelected
                               ? [
                                   BoxShadow(
-                                    color: const Color(0xFFE81B30).withOpacity(0.3),
+                                    color: Color(0xFFE81B30).withOpacity(0.3),
                                     blurRadius: 10,
-                                    offset: const Offset(0, 5),
+                                    offset: Offset(0, 5),
                                   )
                                 ]
                               : [],
@@ -151,13 +151,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
 
               // Burger Grid
               GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.75,
                   crossAxisSpacing: 15,
@@ -182,11 +182,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           BoxShadow(
                             color: Colors.black.withOpacity(0.05),
                             blurRadius: 10,
-                            offset: const Offset(0, 5),
+                            offset: Offset(0, 5),
                           ),
                         ],
                       ),
-                      padding: const EdgeInsets.all(15),
+                      padding: EdgeInsets.all(15),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -201,10 +201,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 10),
+                          SizedBox(height: 10),
                           Text(
                             foodItem.name,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                               color: Colors.black87,
@@ -212,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(height: 4),
+                          SizedBox(height: 4),
                           Text(
                             foodItem.subtitle,
                             style: TextStyle(
@@ -222,21 +222,21 @@ class _HomeScreenState extends State<HomeScreen> {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(height: 10),
+                          SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
-                                  const Icon(Icons.star, color: Colors.amber, size: 18),
-                                  const SizedBox(width: 4),
+                                  Icon(Icons.star, color: Colors.amber, size: 18),
+                                  SizedBox(width: 4),
                                   Text(
                                     foodItem.rating.toString(),
-                                    style: const TextStyle(fontWeight: FontWeight.bold),
+                                    style: TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
-                              const Icon(Icons.favorite_border, size: 20),
+                              Icon(Icons.favorite_border, size: 20),
                             ],
                           ),
                         ],
@@ -253,19 +253,19 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: Container(
         height: 65,
         width: 65,
-        margin: const EdgeInsets.only(top: 30),
+        margin: EdgeInsets.only(top: 30),
         child: FloatingActionButton(
           onPressed: () {},
-          backgroundColor: const Color(0xFFE81B30),
+          backgroundColor: Color(0xFFE81B30),
           elevation: 5,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
-          child: const Icon(Icons.add, color: Colors.white, size: 30),
+          child: Icon(Icons.add, color: Colors.white, size: 30),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
+        shape: CircularNotchedRectangle(),
         notchMargin: 10,
-        color: const Color(0xFFE81B30),
+        color: Color(0xFFE81B30),
         child: SizedBox(
           height: 60,
           child: Row(
@@ -275,22 +275,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.home_outlined, color: Colors.white, size: 28),
-                  const SizedBox(height: 4),
+                  Icon(Icons.home_outlined, color: Colors.white, size: 28),
+                  SizedBox(height: 4),
                   Container(
                     width: 5,
                     height: 5,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
                     ),
                   ),
                 ],
               ),
-              const Icon(Icons.person_outline, color: Colors.white70, size: 28),
-              const SizedBox(width: 40), // Space for FAB
-              const Icon(Icons.chat_bubble_outline, color: Colors.white70, size: 26),
-              const Icon(Icons.favorite_border, color: Colors.white70, size: 28),
+              Icon(Icons.person_outline, color: Colors.white70, size: 28),
+              SizedBox(width: 40), // Space for FAB
+              Icon(Icons.chat_bubble_outline, color: Colors.white70, size: 26),
+              Icon(Icons.favorite_border, color: Colors.white70, size: 28),
             ],
           ),
         ),

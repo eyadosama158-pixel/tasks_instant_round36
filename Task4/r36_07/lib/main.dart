@@ -5,11 +5,11 @@ import 'package:foodo/screens/product_detail_screen.dart';
 import 'package:foodo/model/food_item.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
       title: 'Foodgo App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFA5A6A)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFFFA5A6A)),
         useMaterial3: true,
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const SplashScreen(),
-        '/home': (context) => const HomeScreen(),
+        '/': (context) => SplashScreen(),
+        '/home': (context) => HomeScreen(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/productDetail') {
