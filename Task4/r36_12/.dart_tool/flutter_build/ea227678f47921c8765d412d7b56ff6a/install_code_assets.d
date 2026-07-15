@@ -1,0 +1,1 @@
+ D:\\New\ Flutter\ Projects\\food_app\\.dart_tool\\flutter_build\\ea227678f47921c8765d412d7b56ff6a\\native_assets.json: 
