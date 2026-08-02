@@ -1,20 +1,21 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:task_5/features/products/presentation/cubit/products_cubit.dart';
 import 'package:task_5/features/products/presentation/product_screen.dart';
-import 'routes.dart';
-import '../features/products/presentation/cubit/products_cubit.dart';
 
+class Routes {
+  static final String productsScreen = '/products';
 
-Route? generateRoute(RouteSettings settings) {
-  switch (settings.name) {
-    case Routes.productsScreen:
-      return MaterialPageRoute(
-        builder: (_) => BlocProvider(
+  static final GoRouter appRouter = GoRouter(
+    initialLocation: Routes.productsScreen,
+    routes: [
+      GoRoute(
+        path: Routes.productsScreen,
+        builder: (context, state) => BlocProvider(
           create: (context) => ProductsCubit(),
           child: const ProductsScreen(),
         ),
-      );
-    default:
-      return null;
-  }
+      ),
+    ],
+  );
 }
