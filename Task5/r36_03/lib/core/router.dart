@@ -1,11 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:task_5/core/routes.dart';
 import 'package:task_5/features/products/presentation/cubit/products_cubit.dart';
 import 'package:task_5/features/products/presentation/product_screen.dart';
 
-class Routes {
-  static final String productsScreen = '/products';
-
+class AppRouter {
   static final GoRouter appRouter = GoRouter(
     initialLocation: Routes.productsScreen,
     routes: [

@@ -28,8 +28,7 @@ class Product {
   double get discountPercentage =>
       hasDiscount ? ((oldPrice! - price) / oldPrice!) * 100 : 0;
 
-  String get discountPercentageText =>
-      discountPercentage.toStringAsFixed(0);
+  String get discountPercentageText => discountPercentage.toStringAsFixed(0);
 
   int get discountPercentageInt => discountPercentage.round();
 }
