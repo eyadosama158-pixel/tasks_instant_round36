@@ -1,4 +1,4 @@
-# Task 6: Job Listing App with Real API & Material 3 Design
+# Task 6: Job Listing App with Real API
 
 ## Project Design Mockups
 
@@ -31,12 +31,12 @@ The following placeholder images represent the expected UI states. **Replace the
 
 ---
 
-**Goal:** Build a Job Listing application in Flutter that fetches real data from a public API. The app must implement the **BLoC pattern** for state management and use **Material 3 (Material You)** design principles.
+**Goal:** Build a Job Listing application in Flutter that fetches real data from a public API. The app must implement the **Cubit pattern** for state management.
 
 **Design Source:**
 
 - The UI must match the provided mockups/images. The intended design source is **[Google Stitch (stitch.withgoogle.com)](https://stitch.withgoogle.com/)** or a custom design from **Figma**.
-- Focus on clean card layouts, rounded corners, typography, and dynamic color theming.
+- Focus on clean card layouts, rounded corners, and typography.
 
 **API Endpoint:**
 
@@ -55,7 +55,6 @@ Based on best practices and the previous task's structure, your project must fol
 ```text
 lib/
 ├── core/
-│   ├── theme/             # Material 3 Theme configuration
 │   └── widgets/           # Shared widgets (Buttons, AppBar, etc.)
 ├── features/
 │   └── jobs/
@@ -67,22 +66,15 @@ lib/
 │       │   └── repository/
 │       │       └── job_repository.dart <-- Abstraction between Data & Domain
 │       └── presentation/
-│           ├── bloc/
-│           │   ├── bloc_name/
-│           │   │   ├── bloc_name_event.dart
-│           │   │   ├── bloc_name_state.dart
-│           │   │   └── bloc_name_bloc.dart
-│           │   └── cubit_name/
-│           │   │   ├── cubit_name_state.dart
-│           │   │   └── cubit_name_cubit.dart
+│           ├── cubit/
+│           │   ├── jobs_cubit.dart
+│           │   └── jobs_state.dart
 │           └── screens/
 │               ├── jobs_screen.dart
 │               └── widgets/
 │                   ├── job_shimmer.dart
 │                   └── job_card.dart
 ```
-
----
 
 ## 1. Data Layer: Models & API
 
@@ -143,33 +135,7 @@ Implement a sealed class `JobsState` with 4 subclasses to handle the UI states:
 
 ---
 
-## 4. Design Implementation: Material 3 (Stitch / Figma)
-
-**Note:** The following configurations should be adjusted to match _your_ specific design mockups pulled from Stitch or Figma.
-
-### A. Theme Configuration (`core/theme/app_theme.dart`)
-
-Implement a Material 3 theme using `ColorScheme.fromSeed`.
-
-- Use colors generated from a seed color (e.g., `Color.fromARGB(255, 25, 80, 150)`).
-- Apply the theme to your `MaterialApp`:
-
-```dart
-MaterialApp(
-  theme: ThemeData(
-    useMaterial3: true,
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-    appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
-    cardTheme: CardTheme(
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-    ),
-  ),
-  home: const JobsScreen(),
-)
-```
-
-### B. UI Implementation: `jobs_screen.dart`
+## 4. UI Implementation: `jobs_screen.dart`
 
 Create a `_JobsScreenState` widget that uses `BlocBuilder<JobsCubit, JobsState>` inside a `Scaffold`.
 
@@ -185,7 +151,7 @@ Create a `_JobsScreenState` widget that uses `BlocBuilder<JobsCubit, JobsState>`
 
 ### A. `JobShimmer` Widget:
 
-Create a list with 4 placeholder cards. Use `Shimmer.fromColors` with `baseColor: Theme.of(context).colorScheme.surfaceVariant`, and `highlightColor: Theme.of(context).colorScheme.surface`.
+Create a list with 4 placeholder cards. Use `Shimmer.fromColors` with `baseColor: Colors.grey.shade300`, and `highlightColor: Colors.grey.shade100`.
 
 - Use a container with rounded corners (Radius 16) and a height of ~120px.
 
@@ -193,7 +159,7 @@ Create a list with 4 placeholder cards. Use `Shimmer.fromColors` with `baseColor
 
 This is the main visual piece. Design this based on your Stitch/Figma mockup.
 
-- **Material 3 Card** layout.
+- **Card** layout.
 - **Top Row:** `company_name` (Bold, Primary Color) and `created_at` (Formatted to "2 days ago", Grey).
 - **Middle:** `title` (Heading, large text) and `location` (Icon + Text).
 - **Bottom Row:** An "Apply" button (Outlined style, leading to the `url` link) and `job_type` if available.
@@ -201,12 +167,10 @@ This is the main visual piece. Design this based on your Stitch/Figma mockup.
 
 ### C. `EmptyStateWidget`:
 
-- A centered Column with an `Icon(Icons.search_off, size: 72, color: Theme.of(context).colorScheme.outline)`, and text "No jobs found at the moment."
+- A centered Column with an `Icon(Icons.search_off, size: 72)`, and text "No jobs found at the moment."
 
 ### D. `ErrorStateWidget`:
 
-- A centered Column with an `Icon(Icons.wifi_off, size: 72, color: Theme.of(context).colorScheme.error)`.
+- A centered Column with an `Icon(Icons.wifi_off, size: 72)`.
 - Text "Oops! Something went wrong."
 - A `FilledButton` that triggers `loadJobs()`.
-
----
