@@ -60,11 +60,7 @@ lib/
 │   └── jobs/
 │       ├── data/
 │       │   ├── models/
-│       │   │   ├── job_model.dart     <-- JSON parsing
-│       │   ├── datasources/
-│       │   │   └── job_remote_data_source.dart <-- HTTP calls
-│       │   └── repository/
-│       │       └── job_repository.dart <-- Abstraction between Data & Domain
+│       │   │   ├── job_model.dart  <-- JSON parsing
 │       └── presentation/
 │           ├── cubit/
 │           │   ├── jobs_cubit.dart
